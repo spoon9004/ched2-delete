@@ -3,8 +3,6 @@ package org.example.client;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.Base64;
 import org.apache.logging.log4j.LogManager;
@@ -57,7 +55,6 @@ public class SoapClient {
             outputStream.write(soapRequest.getBytes());
         }
 
-        int responseCode = connection.getResponseCode();
         StringBuilder response = new StringBuilder();
         try (InputStream inputStream = connection.getInputStream()) {
             byte[] buffer = new byte[1024];
