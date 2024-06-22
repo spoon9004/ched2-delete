@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SOAP Client</title>
+</head>
+<body>
+<h1>SOAP Client</h1>
+<form action="#" th:action="@{/sendRequest}" method="post">
+    <div>
+        <label for="url">SOAP Service URL:</label>
+        <input type="text" id="url" name="url"/>
+    </div>
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"/>
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"/>
+    </div>
+    <div>
+        <label for="uuidFilePath">UUID File Path:</label>
+        <input type="text" id="uuidFilePath" name="uuidFilePath"/>
+    </div>
+    <div>
+        <button type="submit">Send Request</button>
+    </div>
+</form>
+<div>
+    <h2>Response</h2>
+    <p th:text="${response}"></p>
+</div>
+</body>
+</html>
